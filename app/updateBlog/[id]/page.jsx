@@ -2,7 +2,7 @@ import EditForm from "@/components/EditForm";
 
 const getBlogById = async (id) => {
   try {
-    const res = await fetch(`/api/blogs/${id}`, {
+    const res = await fetch(`${process.env.NEXT_URL}/api/blogs/${id}`, {
       cache: "no-store",
     });
 

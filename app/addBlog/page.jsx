@@ -22,7 +22,7 @@ const AddBlog = () => {
     }
 
     try {
-      const res = await fetch("/api/blogs", {
+      const res = await fetch(`${process.env.NEXT_URL}/api/blogs`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",

@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const getmyBlogs = async () => {
   try {
-    const res = await fetch("/api/blogs", {
+    const res = await fetch(`${process.env.NEXT_URL}/api/blogs`, {
       cache: "no-store",
     });
 
