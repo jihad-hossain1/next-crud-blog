@@ -32,6 +32,9 @@ const EditForm = ({ id, title, description }) => {
   };
   return (
     <div className="mt-4 ">
+      <h4 className="text-2xl font-extralight text-gray-700 text-center mb-8">
+        Update Your Topic
+      </h4>
       <form action="" className="max-w-xl mx-auto p-2" onSubmit={handleSubmit}>
         <div className="mb-4">
           <input

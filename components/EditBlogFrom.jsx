@@ -34,6 +34,7 @@ const EditBlogForm = ({ id, title, description, image, categoryId }) => {
   };
   return (
     <div className="mt-4 ">
+      <h4 className="text-2xl font-extralight text-gray-700 text-center mb-8">Update Your Blog</h4>
       <form onSubmit={handleSubmit} action="" className="max-w-xl mx-auto p-2">
         <div className="mb-4">
           <label htmlFor="articlesName">articlesName</label>

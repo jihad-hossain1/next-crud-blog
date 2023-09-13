@@ -1,6 +1,6 @@
 import connectMongoDB from "@/libs/mongodb";
 import Articles from "@/models/articles";
-import Topic from "@/models/topic";
+// import Topic from "@/models/topic";
 import { NextResponse } from "next/server";
 
 export async function PUT(request, { params }) {
@@ -14,6 +14,6 @@ export async function PUT(request, { params }) {
 export async function GET(request, { params }) {
     const { id } = params;
     await connectMongoDB();
-    const articles = await Articles.findOne({ _id: id });
-    return NextResponse.json({ articles }, { status: 200 });
+    const article = await Articles.findOne({ _id: id });
+    return NextResponse.json({ article }, { status: 200 });
 }

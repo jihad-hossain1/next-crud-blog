@@ -4,8 +4,9 @@ import Link from "next/link";
 // import { useEffect, useState } from "react";
 
 const getmyBlogs = async () => {
+  const apiUrl = process.env.API_URL;
   try {
-    const res = await fetch(`/api/blogs`, {
+    const res = await fetch(`${apiUrl}/api/blogs`, {
       cache: "no-store",
     });
 
@@ -39,7 +40,7 @@ export default async function BlogsList() {
             </div>
             <div className="flex items-start space-x-3">
               <RemoveBlogBTN id={blog?._id}></RemoveBlogBTN>
-              <Link href={`/editBlog/${blog._id}`}>
+              <Link href={`/updateBlog/${blog._id}`}>
                 <IoOpenSharp className="text-2xl " />
               </Link>
             </div>

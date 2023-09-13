@@ -1,8 +1,10 @@
-import EditForm from "@/components/EditForm";
+import EditBlogForm from "@/components/EditBlogFrom";
+// import EditForm from "@/components/EditForm";
 
 const getBlogById = async (id) => {
+  const apiUrl = process.env.API_URL;
   try {
-    const res = await fetch(`/api/blogs/${id}`, {
+    const res = await fetch(`${apiUrl}/api/blogs/${id}`, {
       cache: "no-store",
     });
 
@@ -22,7 +24,7 @@ export default async function EditBlog({ params }) {
   const { title, description, image, categoryId } = article;
 
   return (
-    <EditForm
+    <EditBlogForm
       id={id}
       title={title}
       description={description}

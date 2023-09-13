@@ -5,8 +5,9 @@ import RemoveBTN from "./RemoveBTN";
 import Link from "next/link";
 
 const getMyTopics = async () => {
+  const apiUrl = process.env.API_URL;
   try {
-    const res = await fetch(`/api/topics`, {
+    const res = await fetch(`${apiUrl}/api/topics`, {
       cache: "no-store",
     });
 
