@@ -1,8 +1,6 @@
-export const getTopics = async () => {
+export const getBlog = async () => {
     try {
-        const res = await fetch("/api/topics", {
-            cache: "no-store",
-        });
+        const res = await fetch("/api/route");
 
         if (!res.ok) {
             throw new Error("Failed to fetch topics");
@@ -13,4 +11,3 @@ export const getTopics = async () => {
         console.log("Error loading topics: ", error);
     }
 };
-

@@ -1,20 +1,18 @@
-// import { getTopics } from "@/utils/getTopics";
-// import SingleTopic from "./SingleTopic";
-import { IoOpenSharp, IoTrashBin } from "react-icons/io5";
+import { IoOpenSharp } from "react-icons/io5";
 import RemoveBlogBTN from "./RemoveBlogBTN";
 import Link from "next/link";
-import Image from "next/image";
+// import { useEffect, useState } from "react";
 
 const getmyBlogs = async () => {
   try {
-    const res = await fetch(`${process.env.NEXT_URL}/api/blogs`, {
+    const res = await fetch(`/api/blogs`, {
       cache: "no-store",
     });
 
     if (!res.ok) {
       throw new Error("Failed to fetch blogs");
     }
-
+    // const articles =
     return res.json();
   } catch (error) {
     console.log("Error loading blogs: ", error);
@@ -23,6 +21,7 @@ const getmyBlogs = async () => {
 
 export default async function BlogsList() {
   const { articles } = await getmyBlogs();
+
   return (
     <div>
       {articles ? (

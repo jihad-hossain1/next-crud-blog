@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const getMyTopics = async () => {
   try {
-    const res = await fetch(`${process.env.NEXT_URL}/api/topics`, {
+    const res = await fetch(`/api/topics`, {
       cache: "no-store",
     });
 

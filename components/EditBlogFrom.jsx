@@ -14,7 +14,7 @@ const EditBlogForm = ({ id, title, description, image, categoryId }) => {
     e.preventDefault();
 
     try {
-      const res = await fetch(`${process.env.NEXT_URL}/api/blogs/${id}`, {
+      const res = await fetch(`/api/blogs/${id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",
